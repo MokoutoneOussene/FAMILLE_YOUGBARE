@@ -55,9 +55,12 @@
                         </nav>
                     </div>
                     <hr>
+                    <a class="nav-link collapsed" href="{{ route('galerie') }}">
+                        <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                        Galerie
+                    </a>
+                    <hr>
                 </div>
             </div>
-            <img class="text-center" src="{{ asset('images/logo.png') }}" alt="logo" width="150px"
-                style="margin: auto">
         </nav>
     </div>

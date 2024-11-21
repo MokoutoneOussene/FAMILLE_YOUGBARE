@@ -92,15 +92,19 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <div class="col-lg-3 col-md-12">
-                                    <label>Quartier</label>
-                                    <input type="text" class="form-control" name="quartier" required>
-                                </div>
-                                <div class="col-lg-3 col-md-12">
+                                <div class="col-lg-6 col-md-12">
                                     <label>Pays</label>
                                     <input type="text" class="form-control" name="pays" required>
                                 </div>
-                                <div class="col-lg-3 col-md-12 mt-5">
+                                <div class="col-lg-6 col-md-12">
+                                    <label>Ville</label>
+                                    <input type="text" class="form-control" name="ville" required>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <label>Quartier</label>
+                                    <input type="text" class="form-control" name="quartier" required>
+                                </div>
+                                <div class="col-lg-6 col-md-12 mt-5">
                                     <div class="mb-3">
                                         <label class="container">Cotisation ?
                                             <input type="checkbox" name="cautisation"
@@ -109,7 +113,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-12">
+                                <div class="col-lg-12 col-md-12">
                                     <label>Montant</label>
                                     <input type="number" class="form-control" name="montant">
                                 </div>

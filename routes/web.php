@@ -47,4 +47,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('change_password/{id}', [UserController::class, 'change_password']);
     Route::post('add_profil_image/{id}', [UserController::class, 'profil_image']);
     Route::get('delete_user/{id}', [UserController::class, 'destroy']);
+
+    Route::GET('nos_galeries', [PageController::class, 'galerie'])->name('galerie');
 });

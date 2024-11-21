@@ -15,7 +15,7 @@
                                     <div class="text-white-75 small">Veuillez renseignez vos informations sur le formulaire
                                         d'ajout de membres</div>
                                 </div>
-                                <i class="feather-xl text-white-50" data-feather="users"></i>
+                                <i class="feather-xl text-white-50" data-feather="user"></i>
                             </div>
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between small">
@@ -34,7 +34,7 @@
                                 <div class="text-lg fw-bold">Tableau de liste des membres</div>
                                 <div class="text-white-75 small">Vous verrez la liste des membres sur le tableau</div>
                             </div>
-                            <i class="feather-xl text-white-50" data-feather="user"></i>
+                            <i class="feather-xl text-white-50" data-feather="users"></i>
                         </div>
                     </div>
                     <div class="card-footer d-flex align-items-center justify-content-between small">

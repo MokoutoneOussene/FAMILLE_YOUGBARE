@@ -30,6 +30,7 @@ return new class extends Migration
             $table->string('statut')->nullable();
             $table->string('quartier')->nullable();
             $table->string('pays')->nullable();
+            $table->string('ville')->nullable();
             $table->string('cautisation')->nullable();
             $table->string('montant')->nullable();
             $table->string('role')->nullable();

@@ -11,6 +11,7 @@ use App\Models\Encaissement;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Depense;
+use App\Models\User;
 
 class PageController extends Controller
 {
@@ -51,5 +52,14 @@ class PageController extends Controller
         $caisses = $total_cotisation - $total_depense;
 
         return view('pages.dashboard', compact('total_depense', 'total_cotisation', 'caisses'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function galerie()
+    {
+        $collection = User::latest()->get();
+        return view('pages.galerie', compact('collection'));
     }
 }
