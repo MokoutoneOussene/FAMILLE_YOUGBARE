@@ -25,6 +25,12 @@ Route::post('deconnexion', [AuthController::class, 'logout'])->name('logout');
 
 Route::resource('gestion_membres', UserController::class);
 
+Route::get("/link", function () {
+    $targetFolder = storage_path("app/public");
+    $linkFolder = $_SERVER['DOCUMENT_ROOT'] . '/storage';
+    symlink($targetFolder, $linkFolder);
+});
+
 Route::middleware(['auth'])->group(function () {
     Route::get('dashbord', [PageController::class, 'dashboard'])->name('dashboard');
 
