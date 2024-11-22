@@ -54,7 +54,7 @@ style="background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 50%
                                         <td>{{ $item->quartier }}</td>
                                         <td>{{ $item->pays }}</td>
                                         <td class="text-center">
-                                            <a href="{{ route('gestion_membres.show', [$item->id]) }}">
+                                            <a href="{{ url('detail_users/' . $item->id) }}">
                                                 <i class="me-2 text-green" data-feather="eye"></i>
                                             </a>
                                         </td>

@@ -52,14 +52,14 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function change_password(Request $request, string $id)
+    public function change_role(Request $request, string $id)
     {
         $finds = User::find($id);
         $finds->update([
-            'password' => Hash::make($request->password),
+            'role' => $request->role,
         ]);
 
-        emotify('success', 'Mot de passe change avec success !');
+        emotify('success', 'Role changé avec success !');
         return redirect()->back();
     }
 
@@ -81,6 +81,15 @@ class UserController extends Controller
      * Display the specified resource.
      */
     public function show(string $id)
+    {
+        $finds = User::find($id);
+        return view('pages.users.profile', compact('finds'));
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function profile(string $id)
     {
         $finds = User::find($id);
         return view('pages.users.show', compact('finds'));
