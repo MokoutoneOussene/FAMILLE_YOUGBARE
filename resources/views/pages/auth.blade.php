@@ -22,8 +22,7 @@
                     </div>
                     <div class="card-body">
                         <div class="d-flex justify-content-center mb-3">
-                            <img class="img-fluid" src="{{ asset('images/istockphoto.jpg') }}" alt="logo"
-                                style="width: 100%">
+                            <img class="img-fluid" src="{{ asset('images/istockphoto.jpg') }}" alt="logo" style="width: 100%">
                         </div>
                         <form action="{{ route('login') }}" method="POST">
                             @csrf
@@ -33,7 +32,7 @@
                             <div class="mb-3">
                                 <input class="form-control" name="password" type="password" placeholder="Entrer votre mot de passe" />
                             </div>
-                            <p>N'etes-vous pas encore un membre ? <a href="{{ route('register') }}" class="text-primary" style="font-style: italic;">devenez-un</a> </p>
+                            <p>N'etes-vous pas encore un membre ? <a href="{{ route('register') }}" class="text-primary" style="font-style: italic;">devenez un memebre</a> </p>
                             <div class="mt-5 mb-0">
                                 <button class="btn btn-primary" type="submit">Se connecter</button>
                             </div>
@@ -42,6 +41,7 @@
                 </div>
             </div>
         </div>
+    </div>
     @include('partials.script')
 </body>
 

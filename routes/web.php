@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnneeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CotisationController;
 use App\Http\Controllers\DepenseController;
@@ -43,12 +44,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('delete_depense/{id}', [DepenseController::class, 'destroy']);
 
 
-
     Route::post('change_password/{id}', [UserController::class, 'change_password']);
     Route::post('add_profil_image/{id}', [UserController::class, 'profil_image']);
     Route::get('delete_user/{id}', [UserController::class, 'destroy']);
     Route::get('detail_users/{id}', [UserController::class, 'profile']);
     Route::post('change_role/{id}', [UserController::class, 'change_role']);
 
-    Route::GET('nos_galeries', [PageController::class, 'galerie'])->name('galerie');
+    Route::get('nos_galeries', [PageController::class, 'galerie'])->name('galerie');
+
+    Route::resource('gestion_annees', AnneeController::class);
+    Route::post('ouverte_statut/{id}', [AnneeController::class, 'ouverte']);
+    Route::post('fermer_statut/{id}', [AnneeController::class, 'fermee']);
 });

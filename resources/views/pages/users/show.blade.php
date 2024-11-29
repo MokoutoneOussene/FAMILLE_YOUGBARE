@@ -52,6 +52,12 @@
                                 data-bs-target="#formBackdroprole">Changer le role</button>
                     @endif
                 </div>
+                <div class="d-flex mt-3">
+                    @if (Auth::user()->role == 'Admin')
+                        <a href="" class="btn btn-success" data-bs-toggle="modal"
+                        data-bs-target="#formBackdropcotis">Ajouter une cotisation</a>
+                    @endif
+                </div>
             </div>
             <div class="col-xl-8">
                 <!-- Account details card-->
@@ -204,6 +210,86 @@
                             <div class="mt-3">
                                 <button type="submit" class="btn btn-success">Changer</button>
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal password -->
+    <div class="modal fade" id="formBackdropcotis" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Ajouter une cotisation
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <form action="{{ route('gestion_cotisations.store') }}" method="POST">
+                            @csrf
+                            <div class="row mb-3">
+                                <div class="col-lg-6 col-md-12">
+                                    <label>Membre</label>
+                                    <select class="form-control" name="users_id" required>
+                                        @foreach ($collection as $item)
+                                            <option value="{{ $item->id }}">{{ $item->telephone }} - {{ $item->nom }} {{ $item->prenom }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <label>Année</label>
+                                    <select name="annees_id" class="form-control">
+                                        @foreach ($annees as $item)
+                                            <option value="{{ $item->id }}">{{ $item->libelle }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-lg-6 col-md-12">
+                                    <label>Période</label>
+                                    <select name="periode" class="form-control">
+                                        <option value="">Selectionner</option>
+                                        <option value="Janvier">Janvier</option>
+                                        <option value="Fevrier">Fevrier</option>
+                                        <option value="Mars">Mars</option>
+                                        <option value="Avril">Avril</option>
+                                        <option value="Mai">Mai</option>
+                                        <option value="Juin">Juin</option>
+                                        <option value="Juillet">Juillet</option>
+                                        <option value="Aout">Aout</option>
+                                        <option value="Semptembre">Semptembre</option>
+                                        <option value="Octobre">Octobre</option>
+                                        <option value="Novembre">Novembre</option>
+                                        <option value="Decembre">Decembre</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <label>Nbr de mois</label>
+                                    <input type="number" class="form-control" name="nbr_mois" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-lg-6 col-md-12">
+                                    <label>Montant</label>
+                                    <input type="number" class="form-control" name="montant" required>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <label>Autres information</label>
+                                    <input type="text" class="form-control" name="autres_info">
+                                </div>
+                            </div>
+                            <input type="text" class="form-control" name="type" value="mensuelle" hidden>
+                            <div class="">
+                                <button type="submit" class="btn btn-success mr-2">Enregistrer</button>
+                                <button type="reset" class="btn btn-danger">Annuler</button>
                             </div>
                         </form>
                     </div>

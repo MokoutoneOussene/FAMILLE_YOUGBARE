@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Annee;
 use App\Models\Cotisation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -92,7 +93,9 @@ class UserController extends Controller
     public function profile(string $id)
     {
         $finds = User::find($id);
-        return view('pages.users.show', compact('finds'));
+        $collection = User::latest()->get();
+        $annees = Annee::where('statut', '=', 'Ouverte')->get();
+        return view('pages.users.show', compact('finds', 'collection', 'annees'));
     }
 
     /**

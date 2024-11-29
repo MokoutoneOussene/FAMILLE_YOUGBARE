@@ -38,8 +38,7 @@
                                             <label>Membre</label>
                                             <select class="form-control" name="users_id" required>
                                                 @foreach ($collection as $item)
-                                                    <option value="{{ $item->id }}">{{ $item->nom }}
-                                                        {{ $item->prenom }} - {{ $item->code }}</option>
+                                                    <option value="{{ $item->id }}">{{ $item->telephone }} - {{ $item->nom }} {{ $item->prenom }}</option>
                                                 @endforeach
                                             </select>
                                         </div>

@@ -57,8 +57,15 @@
                     <hr>
                     <a class="nav-link collapsed" href="{{ route('galerie') }}">
                         <div class="nav-link-icon"><i data-feather="activity"></i></div>
-                        Galerie
+                        GALERIES
                     </a>
+                    @if (Auth::user()->role == 'Admin')
+                        <hr>
+                        <a class="nav-link collapsed" href="{{ route('gestion_annees.index') }}">
+                            <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                            ANNEES
+                        </a>
+                    @endif
                     <hr>
                 </div>
             </div>
