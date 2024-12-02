@@ -237,11 +237,7 @@
                             <div class="row mb-3">
                                 <div class="col-lg-6 col-md-12">
                                     <label>Membre</label>
-                                    <select class="form-control" name="users_id" required>
-                                        @foreach ($collection as $item)
-                                            <option value="{{ $item->id }}">{{ $item->telephone }} - {{ $item->nom }} {{ $item->prenom }}</option>
-                                        @endforeach
-                                    </select>
+                                    <input type="text" value="{{ $finds->telephone }}" class="form-control" readonly>
                                 </div>
                                 <div class="col-lg-6 col-md-12">
                                     <label>Année</label>
