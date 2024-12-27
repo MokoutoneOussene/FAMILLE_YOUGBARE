@@ -49,6 +49,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('delete_user/{id}', [UserController::class, 'destroy']);
     Route::get('detail_users/{id}', [UserController::class, 'profile']);
     Route::post('change_role/{id}', [UserController::class, 'change_role']);
+    Route::post('active_compte/{id}', [UserController::class, 'active_compte']);
+    Route::get('Liste_attente', [UserController::class, 'liste_attente'])->name('liste_attente');
 
     Route::get('nos_galeries', [PageController::class, 'galerie'])->name('galerie');
 

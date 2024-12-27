@@ -58,6 +58,12 @@
                         data-bs-target="#formBackdropcotis">Ajouter une cotisation</a>
                     @endif
                 </div>
+                <div class="d-flex mt-3">
+                    @if (Auth::user()->role == 'Admin')
+                        <a href="" class="btn btn-warning" data-bs-toggle="modal"
+                        data-bs-target="#formBackdropActive">Active - Desactive compte</a>
+                    @endif
+                </div>
             </div>
             <div class="col-xl-8">
                 <!-- Account details card-->
@@ -106,6 +112,7 @@
                                 <div class="col-lg-6 col-md-12">
                                     <label>Situation matrimoniale</label>
                                     <select class="form-control" name="situation" required>
+                                        <option value="{{ $finds->situation }}">{{ $finds->situation }}</option>
                                         <option value="Célibataire">Célibataire</option>
                                         <option value="Marie (e)">Marie (e)</option>
                                         <option value="Divorce (e)">Divorce (e)</option>
@@ -166,12 +173,20 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-12 col-md-12">
+                                <div class="col-lg-6 col-md-12">
+                                    <label>Role utilisateur</label>
+                                    <input type="text" class="form-control" name="montant" value="{{ $finds->role }}">
+                                </div>
+                                <div class="col-lg-6 col-md-12">
                                     <label>Montant</label>
-                                    <input type="number" class="form-control" name="montant"
-                                        value="{{ $finds->montant }}">
+                                    <input type="number" class="form-control" name="montant" value="{{ $finds->montant }}">
                                 </div>
                             </div>
+                            @if (Auth::user()->role == 'Admin')
+                                <div class="">
+                                    <button type="submit" class="btn btn-success mr-2">Modifier</button>
+                                </div>
+                            @endif
                         </form>
                     </div>
                 </div>
@@ -200,6 +215,7 @@
                                         <div class="mb-3">
                                             <label>Role</label>
                                             <select class="form-control" name="role">
+                                                <option value="{{ $finds->role }}">{{ $finds->role }}</option>
                                                 <option value="Admin">Admin</option>
                                                 <option value="Membre">Membre</option>
                                             </select>
@@ -285,7 +301,46 @@
                             <input type="text" class="form-control" name="type" value="mensuelle" hidden>
                             <div class="">
                                 <button type="submit" class="btn btn-success mr-2">Enregistrer</button>
-                                <button type="reset" class="btn btn-danger">Annuler</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal active compte -->
+    <div class="modal fade" id="formBackdropActive" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-default">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Activer - Desactiver un compte</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <form method="POST" action="{{ url('active_compte/' . $finds->id) }}">
+                            @csrf
+                            <div class="p-2 m-1">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="mb-3">
+                                            <label>Statut du compte</label>
+                                            <select class="form-control" name="active">
+                                                <option value="{{ $finds->active }}">{{ $finds->active }}</option>
+                                                <option value="1">Activer</option>
+                                                <option value="0">Desactiver</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <button type="submit" class="btn btn-success">Executer</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
                             </div>
                         </form>
                     </div>

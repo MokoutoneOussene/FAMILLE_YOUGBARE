@@ -44,32 +44,38 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-lg-12 col-md-12 mb-4">
-                    <div class="card lift h-100" style="background: linear-gradient(90deg, rgb(181, 233, 233) 0%, rgb(233, 85, 80) 100%);">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center text-center">
-                                <div class="col-lg-4 col-md-12">
-                                    <div class="mb-2">
-                                        <h6 class="text-uppercase">TOTAL DES COTISATIONS</h6>
-                                        <div class="text-muted small">
-                                            <h1 class="text-primary mt-5" style="font-size: 20px; font-weight: bold;">{{ $total_cotisation }} FCFA</h1>
+            @if (Auth::user()->role == 'Admin')
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 mb-4">
+                        <div class="card lift h-100"
+                            style="background: linear-gradient(90deg, rgb(181, 233, 233) 0%, rgb(233, 85, 80) 100%);">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center text-center">
+                                    <div class="col-lg-4 col-md-12">
+                                        <div class="mb-2">
+                                            <h6 class="text-uppercase">TOTAL DES COTISATIONS</h6>
+                                            <div class="text-muted small">
+                                                <h1 class="text-primary mt-5" style="font-size: 20px; font-weight: bold;">
+                                                    {{ $total_cotisation }} FCFA</h1>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-4 col-md-12">
-                                    <div class="mb-2">
-                                        <h6 class="text-uppercase">TOTAL DES DEPENSES</h6>
-                                        <div class="text-muted small">
-                                            <h1 class="text-primary mt-5" style="font-size: 20px; font-weight: bold;">{{ $total_depense }} FCFA</h1>
+                                    <div class="col-lg-4 col-md-12">
+                                        <div class="mb-2">
+                                            <h6 class="text-uppercase">TOTAL DES DEPENSES</h6>
+                                            <div class="text-muted small">
+                                                <h1 class="text-primary mt-5" style="font-size: 20px; font-weight: bold;">
+                                                    {{ $total_depense }} FCFA</h1>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-4 col-md-12">
-                                    <div class="mb-2">
-                                        <h6 class="text-uppercase">TOTAL EN CAISSE</h6>
-                                        <div class="text-muted small">
-                                            <h1 class="text-primary mt-5" style="font-size: 20px; font-weight: bold;">{{ $caisses }} FCFA</h1>
+                                    <div class="col-lg-4 col-md-12">
+                                        <div class="mb-2">
+                                            <h6 class="text-uppercase">TOTAL EN CAISSE</h6>
+                                            <div class="text-muted small">
+                                                <h1 class="text-primary mt-5" style="font-size: 20px; font-weight: bold;">
+                                                    {{ $caisses }} FCFA</h1>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -77,7 +83,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            @endif
         </div>
     </div>
 @endsection

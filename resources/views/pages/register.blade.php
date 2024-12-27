@@ -22,6 +22,8 @@
                     <div class="card-body">
                         <form action="{{ route('gestion_membres.store') }}" method="POST">
                             @csrf
+                            <input type="text" class="form-control" name="role" value="Membre" hidden>
+                            <input type="text" class="form-control" name="active" value="0" hidden>
                             <div class="row mb-3">
                                 <div class="col-lg-6 col-md-12">
                                     <label>Nom</label>
@@ -68,7 +70,7 @@
                                 </div>
                                 <div class="col-lg-6 col-md-12">
                                     <label>Conjoint (e)</label>
-                                    <input type="text" class="form-control" name="conjoint" required>
+                                    <input type="text" class="form-control" name="conjoint">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -78,37 +80,36 @@
                                 </div>
                                 <div class="col-lg-6 col-md-12">
                                     <label>Email</label>
-                                    <input type="email" class="form-control" name="email" required>
+                                    <input type="email" class="form-control" name="email">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-lg-6 col-md-12">
                                     <label>Date naissance</label>
-                                    <input type="date" class="form-control" name="date_naiss" required>
+                                    <input type="date" class="form-control" name="date_naiss">
                                 </div>
                                 <div class="col-lg-6 col-md-12">
                                     <label>Statut (professionel)</label>
-                                    <input type="text" class="form-control" name="statut" required>
+                                    <input type="text" class="form-control" name="statut">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-lg-6 col-md-12">
                                     <label>Pays</label>
-                                    <input type="text" class="form-control" name="pays" required>
+                                    <input type="text" class="form-control" name="pays">
                                 </div>
                                 <div class="col-lg-6 col-md-12">
                                     <label>Ville</label>
-                                    <input type="text" class="form-control" name="ville" required>
+                                    <input type="text" class="form-control" name="ville">
                                 </div>
                                 <div class="col-lg-6 col-md-12">
                                     <label>Quartier</label>
-                                    <input type="text" class="form-control" name="quartier" required>
+                                    <input type="text" class="form-control" name="quartier">
                                 </div>
                                 <div class="col-lg-6 col-md-12 mt-5">
                                     <div class="mb-3">
                                         <label class="container">Cotisation ?
-                                            <input type="checkbox" name="cautisation"
-                                                value="1">
+                                            <input type="checkbox" name="cautisation" value="1">
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>

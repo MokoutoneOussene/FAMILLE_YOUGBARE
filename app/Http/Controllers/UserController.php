@@ -17,7 +17,16 @@ class UserController extends Controller
      */
     public function index()
     {
-        $collection = User::latest()->get();
+        $collection = User::where('active', '=', '1')->get();
+        return view('pages.users.index', compact('collection'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function liste_attente()
+    {
+        $collection = User::where('active', '=', '0')->get();
         return view('pages.users.index', compact('collection'));
     }
 
@@ -61,6 +70,20 @@ class UserController extends Controller
         ]);
 
         emotify('success', 'Role changé avec success !');
+        return redirect()->back();
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function active_compte(Request $request, string $id)
+    {
+        $finds = User::find($id);
+        $finds->update([
+            'active' => $request->active,
+        ]);
+
+        emotify('success', 'Statut du compte modifié avec success !');
         return redirect()->back();
     }
 

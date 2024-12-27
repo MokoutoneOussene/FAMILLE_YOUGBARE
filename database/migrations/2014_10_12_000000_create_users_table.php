@@ -34,6 +34,7 @@ return new class extends Migration
             $table->string('cautisation')->nullable();
             $table->string('montant')->nullable();
             $table->string('role')->nullable();
+            $table->integer('active')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
