@@ -299,6 +299,7 @@
                                 </div>
                             </div>
                             <input type="text" class="form-control" name="type" value="mensuelle" hidden>
+                            <input type="text" class="form-control" name="users_id" value="{{ $finds->id }}" hidden>
                             <div class="">
                                 <button type="submit" class="btn btn-success mr-2">Enregistrer</button>
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>

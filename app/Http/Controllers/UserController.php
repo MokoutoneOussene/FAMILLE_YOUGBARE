@@ -76,6 +76,20 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    public function change_password(Request $request, string $id)
+    {
+        $finds = User::find($id);
+        $finds->update([
+            'password' => Hash::make($request->password),
+        ]);
+
+        emotify('success', 'Mot de passe changé avec success !');
+        return redirect()->back();
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
     public function active_compte(Request $request, string $id)
     {
         $finds = User::find($id);

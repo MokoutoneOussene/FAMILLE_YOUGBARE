@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('mere')->nullable();
             $table->string('situation')->nullable();
             $table->string('conjoint')->nullable();
-            $table->string('telephone')->nullable();
+            $table->string('telephone')->unique();
             $table->string('date_naiss')->nullable();
             $table->string('statut')->nullable();
             $table->string('quartier')->nullable();

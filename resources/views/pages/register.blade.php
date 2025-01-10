@@ -51,17 +51,17 @@
                             <div class="row mb-3">
                                 <div class="col-lg-6 col-md-12">
                                     <label>Père</label>
-                                    <input type="text" class="form-control" name="pere" required>
+                                    <input type="text" class="form-control" name="pere">
                                 </div>
                                 <div class="col-lg-6 col-md-12">
                                     <label>Mère</label>
-                                    <input type="text" class="form-control" name="mere" required>
+                                    <input type="text" class="form-control" name="mere">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-lg-6 col-md-12">
                                     <label>Situation matrimoniale</label>
-                                    <select class="form-control" name="situation" required>
+                                    <select class="form-control" name="situation">
                                         <option value="Célibataire">Célibataire</option>
                                         <option value="Marie (e)">Marie (e)</option>
                                         <option value="Divorce (e)">Divorce (e)</option>
